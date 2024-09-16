@@ -58,7 +58,12 @@ def main():
         st.link_button("Instagram","https://www.instagram.com/rianvinicius_/", use_container_width=True)
     st.write("---")
     st.subheader("Links úteis")
-    st.button("1") st.button("2")
+    col4, col5, col6 = st.columns([1,1,1])
+    with col4:
+        st.write("Parceiros")
+        st.link_button("Andressa Nassaralla", "https://www.instagram.com/andressa_nassaralla/", use_conteiner_width=True)
+        st.link_button("SXP Toque de Eros", "https://www.instagram.com/sxptoque_d_eros/", use_conteiner_width=True)
+     
     st.write("Acesse meu currículum")
     #file_path = 'curriculo-rian.pdf'
     #with open(file_path, 'rb') as file:
