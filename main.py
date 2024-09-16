@@ -1,29 +1,35 @@
 #My linktr.ee
-import streamlit as st 
+import streamlit as st
 from PIL import Image
+from streamlit_lottie import st_lottie
+import requests
 
 st.set_page_config(layout="centered", page_icon="✈️", page_title="Rian Vinícius")
 
-
+# Função para carregar animações Lottie de uma URL
+def load_lottieurl(url: str):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
 
 def main():
-    col1, col2, col3 = st.columns([1,1,1])
-    image = Image.open("foto.png")
-    img = image.resize((280,280))
+    col1, col2, col3 = st.columns([1, 1, 1])
+    
+    # Carregar a imagem da foto
+    image = Image.open("foto.png")  # Certifique-se que "foto.png" está na mesma pasta
+    img = image.resize((280, 280))
+    
+    # Carregar animação Lottie de uma URL
+    lottie_url = "https://assets2.lottiefiles.com/packages/lf20_x62chJ.json"  # URL de exemplo da animação
+    lottie_animation = load_lottieurl(lottie_url)
     
     with col1:
-        # Certifique-se de que o GIF esteja no caminho correto
-        gif_path = "XOsX.gif"
-        try:
-            with open(gif_path, "rb") as gif_file:
-                gif_bytes = gif_file.read()
-                st.markdown(
-                    f'<img src="data:image/gif;base64,{gif_bytes}" width="200">',
-                    unsafe_allow_html=True
-                )
-        except FileNotFoundError:
-            st.error("O GIF não foi encontrado. Verifique o caminho.")
-    
+        # Exibir a animação Lottie
+        if lottie_animation:
+            st_lottie(lottie_animation, height=200, width=200)
+        else:
+            st.error("Não foi possível carregar a animação Lottie.")
     with col2:
         st.image(img)
         st.header("RIAN VINÍCIUS")
