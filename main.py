@@ -67,13 +67,14 @@ def main():
         st.link_button("SXP Toque de Eros", "https://www.instagram.com/sxptoque_d_eros/", use_container_width=True)
      
     st.write("Acesse meu currículum")
+    st.image("YQDs.gif", width=150)
     #file_path = 'curriculo-rian.pdf'
     #with open(file_path, 'rb') as file:
         #file_data = file.read()
     #st.download_button(label="Baixar PDF",data=file_data,file_name='curriculo-rian.pdf',mime='./', use_container_width=True)
     st.link_button("Contato direto","https://api.whatsapp.com/send?phone=5532991458306", use_container_width=True)
     st.write("")
-    st.image("YQDs.gif", width=200)
+    
     col4, col5, col6 = st.columns([1,1,1])
     with col5:
         st.write("A app by: Rian Vinícius | Todos os direitos reservados © 2024", use_container_width=True)
