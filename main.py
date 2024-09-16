@@ -58,8 +58,8 @@ def main():
         st.link_button("Instagram","https://www.instagram.com/rianvinicius_/", use_container_width=True)
     st.write("---")
     st.subheader("Links úteis")
-    col4, col5, col6 = st.columns([1,1,1])
-    with col4:
+    col7, col8, col9 = st.columns([1,1,1])
+    with col7:
         st.write("Parceiros")
         st.link_button("Andressa Nassaralla", "https://www.instagram.com/andressa_nassaralla/", use_conteiner_width=True)
         st.link_button("SXP Toque de Eros", "https://www.instagram.com/sxptoque_d_eros/", use_conteiner_width=True)
