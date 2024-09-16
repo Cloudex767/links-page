@@ -10,6 +10,8 @@ def main():
     col1, col2, col3 = st.columns([1,1,1])
     image = Image.open("foto.png")
     img = image.resize((280,280))
+    with col1:
+        st.image("XOsX.gif", width=300)
     with col2:
         st.image(img)
         st.header("RIAN VINÍCIUS")
