@@ -11,7 +11,7 @@ def main():
     image = Image.open("foto.png")
     img = image.resize((280,280))
     with col1:
-        st.image("XOsX.gif", width=100)
+        st.image("XOsX.gif", width=200)
     with col2:
         st.image(img)
         st.header("RIAN VINÍCIUS")
