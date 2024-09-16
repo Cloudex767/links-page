@@ -9,7 +9,7 @@ def main():
     
     # Carregar a imagem da foto
     image = Image.open("foto.png")  # Certifique-se que "foto.png" está na mesma pasta
-    img = image.resize((280, 280)
+    img = image.resize((280, 280))
         
     with col2:
         st.image(img)
