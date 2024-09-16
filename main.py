@@ -10,11 +10,20 @@ def main():
     col1, col2, col3 = st.columns([1,1,1])
     image = Image.open("foto.png")
     img = image.resize((280,280))
+    
     with col1:
-        st.image("XOsX.gif", width=200)
+        # Incorporar o GIF usando HTML para garantir que ele seja animado
+        st.markdown(
+            """
+            <img src="XOsX.gif" width="200">
+            """, 
+            unsafe_allow_html=True
+        )
+    
     with col2:
         st.image(img)
         st.header("RIAN VINÍCIUS")
+    
     st.write("---")
     with st.expander("🖥 Desenvolvimento de software", expanded=True):
         col1, col2 = st.columns([2,1])
