@@ -1,35 +1,16 @@
 #My linktr.ee
 import streamlit as st
 from PIL import Image
-from streamlit_lottie import st_lottie
-import requests
 
 st.set_page_config(layout="centered", page_icon="✈️", page_title="Rian Vinícius")
-
-# Função para carregar animações Lottie de uma URL
-def load_lottieurl(url: str):
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
 
 def main():
     col1, col2, col3 = st.columns([1, 1, 1])
     
     # Carregar a imagem da foto
     image = Image.open("foto.png")  # Certifique-se que "foto.png" está na mesma pasta
-    img = image.resize((280, 280))
-    
-    # Carregar animação Lottie de uma URL
-    lottie_url = "https://assets2.lottiefiles.com/packages/lf20_x62chJ.json"  # URL de exemplo da animação
-    lottie_animation = load_lottieurl(lottie_url)
-    
-    with col1:
-        # Exibir a animação Lottie
-        if lottie_animation:
-            st_lottie(lottie_animation, height=200, width=200)
-        else:
-            st.error("Não foi possível carregar a animação Lottie.")
+    img = image.resize((280, 280)
+        
     with col2:
         st.image(img)
         st.header("RIAN VINÍCIUS")
@@ -92,6 +73,7 @@ def main():
     #st.download_button(label="Baixar PDF",data=file_data,file_name='curriculo-rian.pdf',mime='./', use_container_width=True)
     st.link_button("Contato direto","https://api.whatsapp.com/send?phone=5532991458306", use_container_width=True)
     st.write("")
+    st.image("YQDs.gif", width=200)
     col4, col5, col6 = st.columns([1,1,1])
     with col5:
         st.write("A app by: Rian Vinícius | Todos os direitos reservados © 2024", use_container_width=True)
