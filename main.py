@@ -12,13 +12,17 @@ def main():
     img = image.resize((280,280))
     
     with col1:
-        # Incorporar o GIF usando HTML para garantir que ele seja animado
-        st.markdown(
-            """
-            <img src="XOsX.gif" width="200">
-            """, 
-            unsafe_allow_html=True
-        )
+        # Certifique-se de que o GIF esteja no caminho correto
+        gif_path = "XOsX.gif"
+        try:
+            with open(gif_path, "rb") as gif_file:
+                gif_bytes = gif_file.read()
+                st.markdown(
+                    f'<img src="data:image/gif;base64,{gif_bytes}" width="200">',
+                    unsafe_allow_html=True
+                )
+        except FileNotFoundError:
+            st.error("O GIF não foi encontrado. Verifique o caminho.")
     
     with col2:
         st.image(img)
