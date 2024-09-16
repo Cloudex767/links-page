@@ -57,6 +57,8 @@ def main():
         #st.button("Veja minhas artes - Em breve", use_container_width=True)
         st.link_button("Instagram","https://www.instagram.com/rianvinicius_/", use_container_width=True)
     st.write("---")
+    st.subheader("Links úteis")
+    st.button("1") st.button("2")
     st.write("Acesse meu currículum")
     #file_path = 'curriculo-rian.pdf'
     #with open(file_path, 'rb') as file:
